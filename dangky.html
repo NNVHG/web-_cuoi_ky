@@ -29,11 +29,11 @@
             </div>
         </div>
     </nav>
-    <div  class="dangnhap">
+    <div class="dangnhap">
         <h1>Đăng KÝ</h1>
         <form method="post">
             <div class="phannhap">
-                <input type="text" required>
+                <input class="name" type="text" required>
                 <span></span>
                 <label>tên người dùng</label>
             </div>
@@ -47,10 +47,10 @@
                 <label>Mật khẩu</label>
             </div>
             <div class="phannhap">
-                <input type="password" required>
+                <input class="password" type="password" required>
                 <label>Nhập lại mật khẩu</label>
             </div>
-            <input type="submit" value="ĐĂNG KÝ">
+            <input class="nutdangky" type="submit" value="ĐĂNG KÝ">
             <div class="dangky">
                 Đã đăng ký ? <a href="dangnhap.html">Đăng nhập</a>
             </div>
@@ -86,6 +86,32 @@
     <section class="banquyen">
         <p style="margin-right: 50px;"><i class="fa-regular fa-copyright"></i> 2023 COPYRIGHT by Động tối cổ</p>
     </section>
+
+    <script>
+    const inputUsernameRegister = document.querySelector(".name");
+    const inputPasswordRegister = document.querySelector(".password");
+    const btnRegister = document.querySelector(".nutdangky");
+
+    btnRegister.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (
+    inputUsernameRegister.value === "" ||
+    inputPasswordRegister.value === ""
+    ) {
+    alert("vui lòng không để trống");
+    } else {
+
+    const user = {
+    username: inputUsernameRegister.value,
+    password: inputPasswordRegister.value,
+    };
+    let json = JSON.stringify(user);
+    localStorage.setItem(inputUsernameRegister.value, json);
+    alert("Đăng Ký Thành Công");
+    window.location.href = "dangnhap.html";
+    }
+    });
+    </script>
 </body>
 
 </html>

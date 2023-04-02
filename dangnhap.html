@@ -33,17 +33,17 @@
         <h1>Đăng nhập</h1>
         <form method="post">
             <div class="phannhap">
-                <input type="text" required>
+                <input class="Name" type="text" required>
                 <span></span>
                 <label>tên người dùng</label>
             </div>
             <div class="phannhap">
-                <input type="password" required>
+                <input class="password" type="password" required>
                 <span></span>
                 <label>Mật khẩu</label>
             </div>
             <div class="pass">Quên mật khẩu ? </div>
-            <input type="submit" value="ĐĂNG NHẬP">
+            <input class="nutdangnhap" type="submit" value="ĐĂNG NHẬP">
             <div class="dangky">
                 Chưa đăng ký ? <a href="dangky.html">Đăng ký</a>
             </div>
@@ -79,6 +79,31 @@
     <section class="banquyen">
         <p style="margin-right: 50px;"><i class="fa-regular fa-copyright"></i> 2023 COPYRIGHT by Động tối cổ</p>
     </section>
+    <script>
+        const inputUsername = document.querySelector(".Name");
+        const inputPassword = document.querySelector(".password");
+        const btnLogin = document.querySelector(".nutdangnhap");
+
+
+        btnLogin.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (inputUsername.value === "" || inputPassword.value === "") {
+                alert("Vui lòng không để trống");
+            } else {
+                const user = JSON.parse(localStorage.getItem(inputUsername.value));
+                if (
+                    user.username === inputUsername.value &&
+                    user.password === inputPassword.value
+                ) 
+                {
+                    alert("Đăng Nhập Thành Công");
+                    window.location.href = "index.html";
+                } else {
+                    alert("Đăng Nhập Thất Bại");
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
