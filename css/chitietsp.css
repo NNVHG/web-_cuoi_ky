@@ -190,7 +190,27 @@ nav {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
-
+.motachitiet>h2{
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(255, 0, 234);
+}
+.new{
+  width: 100%;
+  background-image: linear-gradient(to right, #ccfdd8, #95bafd);
+  border-radius: 10px;
+  text-align: center;
+  color: #07033f;
+  font-weight: bold;
+}
+.hot{
+  width: 100%;
+  background-image: linear-gradient(to right, #ffb300, #ff0011);
+  border-radius: 10px;
+  text-align: center;
+  color: #07033f;
+  font-weight: bold;
+}
   footer {
     margin-top: 5%;
     background-color: #07033f;
